@@ -7,9 +7,18 @@ let numMayor=0
 let numMedio=0
 let numMenor=0
 
-if(number1 > number2 && number1 > number3){
+if(number1 === number2 && number1 === number3){
   numMayor = number1
-  if(number2>number3){
+  numMedio = numMayor
+  numMenor = numMayor
+}
+else if(number1 > number2 && number1 > number3){
+  numMayor = number1
+  if(number2 === number3){
+    numMedio = number2
+    numMenor = number3
+  }
+  else if(number2>number3){
     numMedio = number2
     numMenor = number3
   }
@@ -20,7 +29,11 @@ if(number1 > number2 && number1 > number3){
 }
 else if(number2 > number3 && number2 > number3){
   numMayor = number2
-  if(number1 > number2){
+  if(number1 === number3){
+    numMedio = number1
+    numMenor = number3
+  }
+  else if(number1 > number2){
     numMedio = number1
     numMenor = number3
   }
@@ -31,7 +44,11 @@ else if(number2 > number3 && number2 > number3){
 }
 else if(number3 > number1 && number3 > number2){
   numMayor = number3
-  if(number1 > number2){
+  if(number1 === number2){
+    numMedio = number1
+    numMenor = number2
+  }
+  else if(number1 > number2){
     numMedio = number1
     numMenor = number2
   }
@@ -40,6 +57,6 @@ else if(number3 > number1 && number3 > number2){
     numMenor = number1
   }
 }
- alert (`Numero mayor: ${numMayor}, Numero medio: ${numMedio}, Numero menor: ${numMenor}`)
+alert (`Numero mayor: ${numMayor}, Numero medio: ${numMedio}, Numero menor: ${numMenor}`)
 console.log(`Numero mayor: ${numMayor}, Numero medio: ${numMedio}, Numero menor: ${numMenor}`)
 }
